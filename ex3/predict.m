@@ -21,15 +21,14 @@ p = zeros(size(X, 1), 1);
 %       can use max(A, [], 2) to obtain the max for each row.
 %
 
+% Add bias term in input layer (l = 1)
 
+X = [ones(m,1) X];
 
+[h hi] = max(sigmoid([ones(m,1) sigmoid(X * Theta1')] * Theta2'), [], 2);
 
-
-
-
-
+p = hi;
 
 % =========================================================================
-
 
 end

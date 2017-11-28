@@ -30,11 +30,13 @@ X = [ones(m, 1) X];
 %       for each row.
 %       
 
+% X * all_theta' returns an m*k matrix.
+% Then, we apply the sigmoid function to all of its elements
+% For each row (training example), we select the maximum value out of all those the sigmoid function returned
 
+[h hi] = max(sigmoid(X * all_theta'), [], 2);
 
-
-
-
+p = hi;
 
 % =========================================================================
 
